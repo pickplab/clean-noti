@@ -1,8 +1,10 @@
 const https = require("https");
 
+const message = "청소 알림 테스트 메시지입니다.";
+
 const data = JSON.stringify({
   chat_id: process.env.CHAT_ID,
-  text: "🧪 텔레그램 테스트 메시지 (깃헙 액션)"
+  text: message
 });
 
 const options = {
@@ -11,7 +13,7 @@ const options = {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    "Content-Length": data.length
+    "Content-Length": Buffer.byteLength(data)
   }
 };
 
