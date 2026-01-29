@@ -2,8 +2,7 @@ name: Company Cleaning Alert
 
 on:
   schedule:
-    - cron: "7 2 * * 1-5"   # 🔥 오전 11:07 (KST)
-    - cron: "12 2 * * 1-5"  # 🔥 11:12 테스트
+    - cron: "22 2 * * 1-5"  # 🔥 오전 11:22 (KST)
   workflow_dispatch:
 
 jobs:
