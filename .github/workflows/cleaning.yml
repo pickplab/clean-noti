@@ -1,0 +1,20 @@
+name: Company Cleaning Alert
+
+on:
+  schedule:
+    # 월~금 오전 9시 (한국시간)
+    - cron: "0 0 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: node send.js
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
