@@ -102,6 +102,7 @@ function isExcluded(d) {
    KST 기준 현재 시간
 ========================= */
 const now = new Date();
+now.setUTCHours(now.getUTCHours() + 9);
 
 /* =========================
    오늘 제외일이면 종료
